@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "run:publish": "lerna publish --canary minor",
     "new:package": "node scripts/template.js package packages "
   },
   "devDependencies": {
