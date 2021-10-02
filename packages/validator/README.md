@@ -3,8 +3,6 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@rothzerg/validator.svg)](https://www.npmjs.com/package/@rothzerg/validator)
 [![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@rothzerg/validator.svg)](https://www.npmjs.com/package/@rothzerg/validator)
 
-Removes all spaces from a string.
-
 ## Install
 
 ```

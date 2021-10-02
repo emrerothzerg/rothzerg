@@ -1,43 +1,40 @@
-# @rothzerg/validator
+# @rothzerg/converter
 
-[![npm (scoped)](https://img.shields.io/npm/v/@rothzerg/validator.svg)](https://www.npmjs.com/package/@rothzerg/validator)
-[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@rothzerg/validator.svg)](https://www.npmjs.com/package/@rothzerg/validator)
-
-Removes all spaces from a string.
+[![npm (scoped)](https://img.shields.io/npm/v/@rothzerg/converter.svg)](https://www.npmjs.com/package/@rothzerg/converter)
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@rothzerg/converter.svg)](https://www.npmjs.com/package/@rothzerg/converter)
 
 ## Install
 
 ```
-$ npm install @rothzerg/validator
+$ npm install @rothzerg/converter
 ```
 
-# Type checks
+## kFormatter(value:string|number)
 
-## isEmail(value:string)
+```typescript
+import { kFormatter } from '@rothzerg/utils'
+```
 
-#### Checks if the given value type is arguments.
+```typescript
 
-interfaces: not, all, any
+kFormatter('1234');
+=> '12.43'
 
-```javascript
-const getArguments = function() {
-    return arguments;
-};
-const arguments = getArguments();
+kFormatter('123456');
+=> '1.2k'
+```
 
-validator.arguments(arguments);
-=> true
+## onlyNumber(value:string)
 
-validator.not.arguments({foo: 'bar'});
-=> true
+```typescript
+import { onlyNumber } from '@rothzerg/utils'
+```
 
-validator.all.arguments(arguments, 'bar');
-=> false
+```typescript
 
-validator.any.arguments(['foo'], arguments);
-=> true
+onlyNumber('emre12s');
+=> '12'
 
-// 'all' and 'any' interfaces can also take array parameter
-validator.all.arguments([arguments, 'foo', 'bar']);
-=> false
+onlyNumber('emre');
+=> ''
 ```

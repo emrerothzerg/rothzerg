@@ -11,17 +11,42 @@ $ npm install @rothzerg/utils
 
 # Utils
 
-## isEmail(value:string)
+## asBoolean(value:string)
 
 ```typescript
-import { isEmail } from '@rothzerg/utils'
+import { asBoolean } from '@rothzerg/utils'
 ```
 
 ```typescript
 
-isEmail('test@test.com');
+asBoolean('1');
 => true
 
-isEmail('test');
+asBoolean('true');
 => false
+
+asBoolean('1234');
+=> false
+
+asBoolean('false');
+=> false
+
+asBoolean('0');
+=> false
+```
+
+## startsWith(string:string, value:string)
+
+```typescript
+import { asBoolean } from '@rothzerg/utils'
+```
+
+```typescript
+
+startsWith('emre rothzerg', 'emre');
+=> true
+
+startsWith('emre rothzerg', 'rotherg');
+=> false
+
 ```
