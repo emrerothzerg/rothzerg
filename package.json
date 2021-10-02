@@ -1,4 +1,5 @@
 {
+  "homepage": "https://www.rothzerg.com.au",
   "name": "monorepo-template",
   "version": "1.0.0",
   "private": true,
@@ -18,5 +19,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emrerothzerg/rothzerg.git"
   }
 }
