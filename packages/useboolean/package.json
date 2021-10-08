@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "lint": "eslint . --ext .tsx"
   },
   "publishConfig": {
     "access": "public"
