@@ -8,6 +8,9 @@
     "start": "rollup -c -w",
     "test": "jest --env=jsdom"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Emre Rothzerg",
   "devDependencies": {
     "@babel/core": "^7.15.8",
