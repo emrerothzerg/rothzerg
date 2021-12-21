@@ -1,6 +1,6 @@
 {
   "name": "@rothzerg/useboolean",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React hook for managing booleans",
   "main": "dist/index.js",
   "scripts": {
