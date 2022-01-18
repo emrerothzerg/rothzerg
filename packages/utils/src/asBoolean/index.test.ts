@@ -4,6 +4,7 @@ describe('asBoolean', () => {
   test.each`
     input        | expectedResult
     ${'1'}       | ${true}
+    ${1}         | ${true}
     ${'true'}    | ${true}
     ${0}         | ${false}
     ${1234}      | ${false}

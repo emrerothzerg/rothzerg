@@ -22,8 +22,11 @@ import { asBoolean } from '@rothzerg/utils'
 asBoolean('1');
 => true
 
+asBoolean(1);
+=> true
+
 asBoolean('true');
-=> false
+=> true
 
 asBoolean('1234');
 => false
@@ -32,6 +35,9 @@ asBoolean('false');
 => false
 
 asBoolean('0');
+=> false
+
+asBoolean(0);
 => false
 ```
 

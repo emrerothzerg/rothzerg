@@ -11,17 +11,4 @@ $ npm install @rothzerg/xmlparser
 
 # Xmlparser
 
-## isEmail(value:string)
-
-```typescript
-import { isEmail } from '@rothzerg/xmlparser'
-```
-
-```typescript
-
-isEmail('test@test.com');
-=> true
-
-isEmail('test');
-=> false
-```
+`details soon...`
