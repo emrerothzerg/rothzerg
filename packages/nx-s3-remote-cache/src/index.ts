@@ -1,6 +1,7 @@
 import defaultTaskRunner from '@nrwl/workspace/tasks-runners/default'
 import { S3 } from '@aws-sdk/client-s3'
-import { fromEnv } from '@aws-sdk/credential-provider-env'
+import { fromIni } from '@aws-sdk/credential-provider-ini'
+import { fromEnv, ENV_KEY, ENV_SECRET } from '@aws-sdk/credential-provider-env'
 import { join, dirname, relative } from 'path'
 import { promises, readFileSync } from 'fs'
 import mkdirp from 'mkdirp'
@@ -12,6 +13,8 @@ export default function runner(
   options: Parameters<typeof defaultTaskRunner>[1] & {
     bucketName: string
     folderName: string
+    profile?: string
+    region?: string
   },
   context: Parameters<typeof defaultTaskRunner>[2]
 ) {
@@ -23,9 +26,16 @@ export default function runner(
     throw new Error('Please update nx.json to include a folderName')
   }
 
+  const areCredentialsInEnv = Boolean(process.env[ENV_KEY] && process.env[ENV_SECRET])
+  console.log('>>>> Credentials from env?', areCredentialsInEnv)
+
   const s3 = new S3({
-    region: process.env.AWS_REGION || 'us-east-1',
-    credentials: fromEnv(), // load AWS credentials via env
+    region: options.region || process.env.AWS_REGION || 'us-east-1',
+    credentials: areCredentialsInEnv
+      ? fromEnv()
+      : fromIni({
+          profile: options.profile,
+        }),
   })
 
   process.on('unhandledRejection', () => {})

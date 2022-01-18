@@ -30,6 +30,8 @@ Add `tasksRunnerOptions` in your `nx.json` file
         "default": {
             "runner": "@rothzerg/nx-s3-remote-cache",
             "options": {
+                "profile": "default",
+                "region": "us-east-1",
                 "bucketName": "NAME-OF-YOUR-STORAGE-BUCKET",
                 "FolderName": "NAME-OF-YOUR-STORAGE-FOLDER-IN-THE-BUCKET",
                 "cacheableOperations": ["build", "test", "e2e", "lint", "package", "prepare"]

@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const default_1 = __importDefault(require("@nrwl/workspace/tasks-runners/default"));
 const client_s3_1 = require("@aws-sdk/client-s3");
+const credential_provider_ini_1 = require("@aws-sdk/credential-provider-ini");
 const credential_provider_env_1 = require("@aws-sdk/credential-provider-env");
 const path_1 = require("path");
 const fs_1 = require("fs");
@@ -18,9 +19,15 @@ function runner(tasks, options, context) {
     if (!options.folderName) {
         throw new Error('Please update nx.json to include a folderName');
     }
+    const areCredentialsInEnv = Boolean(process.env[credential_provider_env_1.ENV_KEY] && process.env[credential_provider_env_1.ENV_SECRET]);
+    console.log('>>>> Credentials from env?', areCredentialsInEnv);
     const s3 = new client_s3_1.S3({
-        region: process.env.AWS_REGION || 'us-east-1',
-        credentials: (0, credential_provider_env_1.fromEnv)(), // load AWS credentials via env
+        region: options.region || process.env.AWS_REGION || 'us-east-1',
+        credentials: areCredentialsInEnv
+            ? (0, credential_provider_env_1.fromEnv)()
+            : (0, credential_provider_ini_1.fromIni)({
+                profile: options.profile,
+            }),
     });
     process.on('unhandledRejection', () => { });
     process.on('rejectionHandled', () => { });
