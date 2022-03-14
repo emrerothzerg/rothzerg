@@ -7,7 +7,7 @@
   "author": "Emre Rothzerg",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "build": "rollup -c",
     "lint": "eslint . --ext .tsx"
   },
