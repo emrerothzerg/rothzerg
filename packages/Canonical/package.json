@@ -6,6 +6,15 @@
   "jsnext:main": "dist/index.es.js",
   "author": "Emre Rothzerg",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/emrerothzerg/rothzerg",
+    "directory": "packages/Canonical"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "test": "jest --passWithNoTests",
     "build": "rollup -c",

@@ -3,14 +3,20 @@
   "version": "1.0.4",
   "description": "React hook for managing booleans",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/emrerothzerg/rothzerg",
+    "directory": "packages/useboolean"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
     "test": "jest --env=jsdom",
     "lint": "eslint . --ext .tsx"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "author": "Emre Rothzerg",
   "devDependencies": {
