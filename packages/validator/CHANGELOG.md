@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/emrerothzerg/rothzerg/compare/@rothzerg/validator@1.0.4...@rothzerg/validator@1.0.5) (2022-03-14)
+
+**Note:** Version bump only for package @rothzerg/validator
+
+
+
+
+
 ## [1.0.4](https://github.com/emrerothzerg/rothzerg/compare/@rothzerg/validator@1.0.3...@rothzerg/validator@1.0.4) (2021-10-02)
 
 **Note:** Version bump only for package @rothzerg/validator
