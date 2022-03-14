@@ -6,9 +6,6 @@
   "jsnext:main": "dist/index.es.js",
   "author": "Emre Rothzerg",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "test": "jest --passWithNoTests",
     "build": "rollup -c",
