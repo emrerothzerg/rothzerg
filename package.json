@@ -3,10 +3,6 @@
   "name": "root",
   "private": true,
   "version": "1.0.0",
-  "publishConfig": {
-    "access": "restricted",
-    "registry": "https://registry.npmjs.org/"
-  },
   "workspaces": [
     "packages/*"
   ],
