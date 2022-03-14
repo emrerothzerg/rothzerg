@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: "14"
           registry-url: https://registry.npmjs.org/
+          scope: "@rothzerg"
 
       - name: Install dependencies
         run: |
@@ -32,5 +33,4 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
-          npm init --scope=@rothzerg
           npm publish --access public
