@@ -5,6 +5,9 @@
   "useWorkspaces": true,
   "command": {
     "publish": {
+      "npmClient": "npm",
+      "verifyAccess": false,
+      "ignoreChanges": [],
       "conventionalCommits": true
     },
     "version": {
