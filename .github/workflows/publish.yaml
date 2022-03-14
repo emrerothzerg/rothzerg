@@ -30,6 +30,6 @@ jobs:
         run: npx lerna exec npm run test
 
       - name: "Version and publish"
-        run: lerna publish
+        run: lerna publish --yes
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
