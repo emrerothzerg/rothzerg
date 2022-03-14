@@ -18,8 +18,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14"
-          registry-url: "https://npm.pkg.github.com/"
+          registry-url: "https://registry.npmjs.org/"
           scope: "@rothzerg"
+
+      - name: Configure CI Git User
+        run: |
+          git config --global user.email 'hello@emrerothzerg.com'
+          git config --global user.name 'GitHub Actions'
 
       - name: Install dependencies
         run: |
