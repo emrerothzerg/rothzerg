@@ -1,8 +1,11 @@
 {
   "homepage": "https://www.rothzerg.com.au",
-  "name": "monorepo-template",
+  "name": "root",
   "version": "1.0.0",
-  "private": true,
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
+  },
   "workspaces": [
     "packages/*"
   ],
